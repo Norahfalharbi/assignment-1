@@ -1,1 +1,188 @@
+/* Base styles */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #2563eb;
+  --card: #f1f5f9;
+  --border: #e2e8f0;
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --accent: #60a5fa;
+    --card: #111827;
+    --border: #1f2937;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(180%) blur(10px);
+  background: color-mix(in hsl, var(--bg) 90%, transparent);
+  border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+.logo { font-weight: 800; text-decoration: none; color: var(--text); }
+.nav-list { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0; align-items: center; }
+.nav-toggle { display: none; }
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) 1rem 2rem;
+}
+.hero-inner h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 0 0 .5rem; }
+.tagline { color: var(--muted); margin: 0 0 1rem; }
+.hero-img { width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+
+.section { padding: 2rem 1rem; max-width: 1100px; margin: 0 auto; }
+.section h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+}
+.card img { display: block; width: 100%; height: auto; }
+.card-body { padding: 1rem; display: grid; gap: .5rem; }
+.card h3 { margin: 0; }
+
+.btn {
+  display: inline-block;
+  border-radius: .75rem;
+  padding: .6rem .9rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  border-color: transparent;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+label { display: grid; gap: .4rem; }
+input, textarea {
+  width: 100%;
+  padding: .7rem .8rem;
+  border-radius: .6rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+input:focus, textarea:focus { outline: 2px solid color-mix(in hsl, var(--accent) 40%, transparent); }
+
+.form-actions { display: flex; align-items: center; gap: 1rem; }
+
+.site-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 1rem; border-top: 1px solid var(--border);
+}
+.to-top { text-decoration: none; color: var(--accent); }
+
+/* 1) Base: remove list bullets and default spacing */
+.nav-links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) Layout: align logo, links, buttons on one line */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo{ font-weight: 800; }
+
+/* 3) Make links horizontal with spacing */
+.nav-links{
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;           /* push links to the right */
+}
+
+/* 4) Style the links (no blue/underline, add hover) */
+.nav-link{
+  display: inline-block;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  color: inherit;
+}
+.nav-link:hover,
+.nav-link:focus{
+  background: #f2f3f5;         /* or var(--panel) in dark mode */
+}
+
+/* 5) Hamburger: look like an icon button; hide on desktop */
+.hamburger{
+  appearance: none;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: .5rem;
+  padding: .4rem .55rem;
+  line-height: 1;
+  cursor: pointer;
+  display: none;                /* hidden on desktop */
+}
+
+/* 6) Mobile: show hamburger; turn links into a dropdown list */
+@media (max-width: 900px){
+  .hamburger{ display: inline-flex; margin-left: auto; }
+  .nav-links{
+    position: absolute;
+    right: 1rem; top: 56px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: .75rem;
+    padding: .5rem;
+    display: none;              /* hidden until toggled */
+    flex-direction: column;
+  }
+  .nav-links.show{ display: flex; }
+}
+
+
+/* Utility */
+.accent { color: var(--accent); }

@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="logo" href="#"> Portfolio</a>
+      <ul id="navMenu" class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero container">
+      <div>
+        <p id="greeting" class="greeting" aria-live="polite"></p>
+        <h1 class="title">Hi, I’m <span class="accent">Norah Alharbi</span>.</h1>
+        <p class="tagline">I am computer scince student at KFUPM </p>
+        <div class="cta">
+          <a href="#projects" class="btn">See my ptoject</a>
+          <a href="#contact" class="btn btn-ghost">Contact me</a>
+        </div>
+      </div>
+      <img src="assets/images/profile-placeholder.svg" class="hero-img" alt="Profile illustration" />
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About Me</h2>
+      <p>
+        I'm a web developer in training who loves turning ideas into responsive, user-friendly websites.
+        Currently exploring HTML, CSS, and JavaScript fundamentals and learning with AI-assisted tools.
+      </p>
+      <p class="muted">Tagline: “Design simply. Build responsibly.”</p>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="grid projects-grid">
+        <article class="card">
+          <img src="assets/images/project-1.svg" alt="Project one placeholder" />
+          <div class="card-body">
+            <h3>Project One</h3>
+            <p>A short description of this project. What problem it solves, and what you learned.</p>
+            <button class="btn small" data-toast="Coming soon!">Details</button>
+          </div>
+        </article>
+        <article class="card">
+          <img src="assets/images/project-2.svg" alt="Project two placeholder" />
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>A short description of this project. Mention tools or concepts you used.</p>
+            <button class="btn small" data-toast="Coming soon!">Details</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <form id="contactForm" novalidate class="form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name" />
+          <small class="error" id="nameError" aria-live="polite"></small>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+          <small class="error" id="emailError" aria-live="polite"></small>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Say hello!"></textarea>
+          <small class="error" id="messageError" aria-live="polite"></small>
+        </div>
+        <button type="submit" class="btn">Send (demo)</button>
+        <p class="muted small">This is a demo form; no backend is connected.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span id="year"></span> Your Name</p>
+      <ul class="social">
+        <li><a href="#" aria-label="GitHub">GitHub</a></li>
+        <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        <li><a href="mailto:you@example.com" aria-label="Email">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
 
