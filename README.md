@@ -9,9 +9,8 @@ This is my homework a simple **portfolio website** built with HTML, CSS, and Jav
 
 # Setup instructions
 1. **Clone this repository**  
-   ```bash
-   git clone https://github.com/Norahfalharbi/assignment-1.git
-   cd portfolio-hw
+   https://github.com/Norahfalharbi/assignment-1.git
+  
 2. **Open in a browser**
 
 - **Simply open index.html in your browser**
