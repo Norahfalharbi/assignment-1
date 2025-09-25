@@ -4,7 +4,7 @@ This file documents how AI was used in the development of my portfolio Homework.
 
 ---
 
-## 🔧 Tools Used & Use Cases
+##  Tools Used & Use Cases
 - **ChatGPT:**
   - Suggested best practices for HTML structure.
   - Provided CSS examples for responsive layout.
@@ -12,7 +12,7 @@ This file documents how AI was used in the development of my portfolio Homework.
 
 ---
 
-## ✅ Benefits & Challenges
+## Benefits & Challenges
 **Benefits**
 - Saved time by quickly detect error in code.
 - Helped me understand how to implement responsive design patterns.
@@ -24,14 +24,14 @@ This file documents how AI was used in the development of my portfolio Homework.
 
 ---
 
-## 📚 Learning Outcomes
+##  Learning Outcomes
 - Learned how to structure a simple but complete portfolio website.
 - Improved understanding of CSS Grid and Flexbox for layouts.
 - Gained experience writing clearer documentation.
 
 ---
 
-## ✏️ How I Modified AI Suggestions Responsibly
+##  How I Modified AI Suggestions Responsibly
 - I **reviewed every suggestion** before adding it to my code.
 - Removed unused classes and simplified CSS to match my project’s needs.
 - I firstly wrote the full code by myself then ask AI for improvement.

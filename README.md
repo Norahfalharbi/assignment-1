@@ -1,17 +1,20 @@
-# assignment-1
+# Assignment-1
 # Protfolio website
-This is my protfolio website built by using HTML,CSS, and JavaScript
+
 
 
 # Description
-- **Header / Navigation:** Logo on the left and links (About, Projects, Contact) on the right.  
-- **Introduction Section:** Displays my name and a dynamic greeting message based on the time of day.  
-- **About Section:** Includes a short bio and tagline.  
-- **Projects Section:** Shows my projects in interactive cards with hover effects.  
-- **Contact Section:** Contains a form for visitors to send a message (name, email, message).  
-- **Footer:** Includes a “Back to Top” link and the current year (updated automatically with JavaScript).  
-- **Responsive Design:** Works on both desktop and mobile screens.  
-- **Dark Mode Ready:** Colors adjust automatically based on system preference.
+This is my homework a simple **portfolio website** built with HTML, CSS, and JavaScript. It presents an introduction, about me, projects, and a contact form in a responsive design and includes small dynamic features like a time-based greeting and an auto-updating year.  
+
+
+# Setup instructions
+1. **Clone this repository**  
+   ```bash
+   git clone https://github.com/Norahfalharbi/assignment-1.git
+   cd portfolio-hw
+2. **Open in a browser**
+
+- **Simply open index.html in your browser**
 
 
 # AI Usage Summary
