@@ -3,100 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio </title>
+  <title>Portfolio</title>
+  <!-- Link to external CSS file -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!--Header-->
   <header class="site-header">
-  <nav class="nav">
-    <a class="logo" href="#">Portfolio</a>
-    <div class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-  </nav>
+    <nav class="nav">
+      <!-- Logo / Home link -->
+      <a class="logo" href="#">Portfolio</a>
+      <!-- Navigation links -->
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
   </header>
 
+  <!--Main Content -->
   <main id="main">
-    <section class="hero section">
-      <div class="hero-inner">
+
+    <!-- Introduction Section -->
+    <section class="Introduction section">
+      <div class="inner">
         <h1>Hi <span style="color:rgb(222, 58, 25)">I am Norah ALharbi</span></h1>
-       
       </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section">
       <h2>About Me</h2>
       <p>
-       I'm computer scince student at KFUPM. I'm passionate about building web applications and 
-       exploring how technology can solve real-world problems. 
-       I enjoy working with modern web technologies and continuously 
-       learning new tools. Currently, I’m developing projects that strengthen my 
-       skills in software development, algorithms, and design.
+        I'm a computer science student at KFUPM. I'm passionate about building web applications and 
+        exploring how technology can solve real-world problems. 
+        I enjoy working with modern web technologies and continuously 
+        learning new tools. Currently, I’m developing projects that strengthen my 
+        skills in software development, algorithms, and design.
       </p>
       <h3>Tagline</h3>
-      <ul><li>Turning ideas into code.</li>
-    <li>Learning by building</li>
-</ul>
-</section>
+      <ul>
+        <li> Turning ideas into code.</li>
+        <li> Learning by building</li>
+      </ul>
+    </section>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
 
-    <div class="card">
-      <div class="card-media">
-        <img src="assets/images/CMOIVE.png" alt="CMOVIE logo">
-      </div>
-      <div class="card-body">
-        <h3>CMOVIE</h3>
-        <p>
-          A simple web app to search and book movies online.  
-          It focuses on an easy-to-use interface, allowing users to explore showtimes and reserve tickets quickly.  
-          Built to practice core web development concepts like responsive layouts, forms, and client-side interactions.
-        </p>
-      </div>
-      <div class="card-actions">
-        <button class="btn">Details</button>
-      </div>
-    </div>
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="card-media">
+            <img src="assets/images/CMOIVE.png" alt="CMOVIE logo">
+          </div>
+          <div class="card-body">
+            <h3>CMOVIE</h3>
+            <p>
+              A simple web app to search and book movies online.  
+              It focuses on an easy-to-use interface, allowing users to explore showtimes and reserve tickets quickly.  
+              Built to practice core web development concepts like responsive layouts, forms, and client-side interactions.
+            </p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">Details</button>
+          </div>
+        </div>
 
-    <div class="card">
-      <div class="card-media">
-        <img src="assets/images/HASEEB.png" alt="HASEEB logo">
-      </div>
-      <div class="card-body">
-        <h3>HASEEB</h3>
-        <p>
-          A lightweight financial management toolkit designed for small suppliers in the coffee supply industry.  
-          It helps users track expenses, manage sales, and make data-driven decisions with minimal overhead.
-        </p>
-      </div>
-      <div class="card-actions">
-        <button class="btn">Details</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="card-media">
+            <img src="assets/images/HASEEB.png" alt="HASEEB logo">
+          </div>
+          <div class="card-body">
+            <h3>HASEEB</h3>
+            <p>
+              A lightweight financial management toolkit designed for small suppliers in the coffee supply industry.  
+              It helps users track expenses, manage sales, and make data-driven decisions with minimal overhead.
+            </p>
+          </div>
+          <div class="card-actions">
+            <button class="btn">Details</button>
+          </div>
+        </div>
 
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section">
       <h2>Contact</h2>
       <form id="contactForm" novalidate class="grid-2">
+        <!-- Name Field -->
         <label>Name
           <input id="name" name="name" type="text" required placeholder="Your name" />
-          
         </label>
-        <label> Email<input id="email" name="email" type="email" required placeholder="you@example.com" /></label>
-        <label class="full">
-          Message
+
+        <!-- Email Field -->
+        <label>Email
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </label>
+
+        <!-- Message Field -->
+        <label class="full">Message
           <textarea id="message" name="message" rows="6" required placeholder="Say hello!"></textarea>
         </label>
+
+        <!-- Submit Button -->
         <div class="form-actions full">
           <button type="submit" class="btn primary">Send</button>
         </div>
@@ -104,12 +119,17 @@
     </section>
   </main>
 
+  <!--Footer-->
   <footer class="site-footer">
+    <!-- Scroll back to top -->
     <a href="#" class="to-top">↑ Back to top</a>
+    <!-- Dynamic year will be inserted by JS -->
     <p>© <span id="year"></span> Portfolio</p>
   </footer>
 
+  <!-- Link to external JavaScript -->
   <script src="js/script.js"></script>
 </body>
 </html>
+
 

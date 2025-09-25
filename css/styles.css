@@ -1,108 +1,103 @@
-/* =======================
-   Theme Variables
-   ======================= */
 :root {
   --bg: #ffffff;
   --text: #4e525a;
-  --muted: #475569;
   --accent: #e64a27;
-  --card: #c2d3e4;
+  --card: #dbdbdb;
   --border: #e2e8f0;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b1020;
     --text: #e5e7eb;
-    --muted: #94a3b8;
     --accent: #60a5fa;
     --card: #111827;
     --border: #1f2937;
   }
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-               "Apple Color Emoji", "Segoe UI Emoji";
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
-img { max-width: 100%; display: block; }
 
-/* =======================
-   Skip Link (a11y)
-   ======================= */
-.skip-link {
-  position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+/* Section wrapper */
+.section {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-.skip-link:focus {
-  left: 1rem; 
-  top: 1rem;
-   width: auto; 
-   height: auto;
-  background: var(--accent);
-   color: #725d5d;
-  padding: .5rem .75rem; border-radius: .5rem;
+.section h2 {
+  font-size: 1.8rem;
+  margin: 0 0 1rem;
 }
 
-/* =======================
-   Header & Navigation
-   ======================= */
+/* Navigation */
 .site-header {
-  position: sticky; top: 0; z-index: 10;
-  backdrop-filter: saturate(180%) blur(10px);
-  background: color-mix(in hsl, var(--bg) 90%, transparent);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
-  padding: .75rem 1rem;
 }
-.nav { display: flex; align-items: center; gap: 1rem; }
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+}
 
 .logo {
-  display: flex; align-items: center; gap: .5rem;
-  font-weight: 800; text-decoration: none; color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
 }
-.logo-img { height: 36px; width: auto; display: block; }
 
 .nav-links {
-  display: flex; gap: 1rem;
-  list-style: none; margin: 0; padding: 0;
-  margin-left: auto;
+  display: flex;
+  gap: 2rem;
 }
+
 .nav-link {
-  display: inline-block;
-  padding: .5rem .75rem;
-  border-radius: .5rem;
   text-decoration: none;
-  color: inherit;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
-.nav-link:hover, .nav-link:focus { background: var(--card); }
-
-
-
-/* =======================
-   Sections & Layout
-   ======================= */
-.section { padding: 2rem 1rem; max-width: 1100px; margin: 0 auto; }
-.section h2 { font-size: 1.8rem; margin: 0 0 1rem; }
-.muted { color: var(--muted); }
-.accent { color: var(--accent); }
-
-/* Hero */
-.hero {
-  display: grid; grid-template-columns: 1.5fr 1fr;
-  gap: 2rem; align-items: center;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--accent);
 }
-.hero-inner h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 0 0 .5rem; }
-.tagline { color: var(--muted); margin: 0 0 1rem; }
-.actions { display: flex; gap: .75rem; }
-.hero-img { border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
 
-/* =======================
-   Projects Grid & Cards
-   ======================= */
+/*Introduction*/
+.Introduction {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.inner h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0 0 0.5rem;
+}
+
+/*Projects */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -112,111 +107,136 @@ img { max-width: 100%; display: block; }
 
 .card {
   display: grid;
-  grid-template-rows: auto 1fr auto; /* media | body grows | actions */
+  grid-template-rows: auto 1fr auto;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 1rem;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .card-media {
-  aspect-ratio: 1 / 1;              /* square area for both logos */
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--card);
-  padding: 1rem;                    /* keeps logos from touching edges */
+  padding: 1rem;
 }
-
 .card-media img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;              /* keeps full logo visible */
+  object-fit: contain;
 }
 
-.card-body { padding: 1rem; display: grid; gap: .5rem; }
-.card-body h3 { margin: 0; }
-.card-actions { padding: .75rem 1rem; }
+.card-body {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.card-body h3 {
+  margin: 0;
+}
+.card-body {
+  min-height: 90px;
+}
+
+.card-actions {
+  padding: 0.75rem 1rem;
+}
 .card-actions .btn {
   width: 100%;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   background: transparent;
   border: 1px solid var(--border);
 }
-.card-body { min-height: 90px; }
 
-/* =======================
-   Buttons
-   ======================= */
+/*Buttons */
 .btn {
   display: inline-block;
-  border-radius: .75rem;
-  padding: .6rem .9rem;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
   border: 1px solid var(--border);
   text-decoration: none;
   cursor: pointer;
   color: inherit;
   background: transparent;
+  font-weight: 500;
 }
 .btn.primary {
   background: var(--accent);
   color: #fff;
   border-color: transparent;
 }
-.btn.ghost { background: transparent; color: var(--text); }
+.btn.primary:hover {
+  opacity: 0.9;
+}
+/* Forms */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.grid-2 .full {
+  grid-column: 1 / -1;
+}
 
-/* =======================
-   Forms
-   ======================= */
-.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-.grid-2 .full { grid-column: 1 / -1; }
-
-label { display: grid; gap: .4rem; }
-input, textarea {
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+input,
+textarea {
   width: 100%;
-  padding: .7rem .8rem;
-  border-radius: .6rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.6rem;
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--text);
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: 2px solid color-mix(in hsl, var(--accent) 40%, transparent);
   outline-offset: 1px;
 }
-.error { color: #ef4444; min-height: 1.25rem; }
-.form-actions { display: flex; align-items: center; gap: 1rem; }
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-/* =======================
-   Footer
-   ======================= */
+/* Footer */
 .site-footer {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.25rem 1rem;
   border-top: 1px solid var(--border);
 }
-.to-top { text-decoration: none; color: var(--accent); }
+.to-top {
+  text-decoration: none;
+  color: var(--accent);
+}
 
-/* =======================
-   Responsive
-   ======================= */
+/*Responsive*/
 @media (max-width: 900px) {
-  .hamburger { display: inline-flex; margin-left: auto; }
-
-  .nav-links {
-    position: absolute;
-    right: 1rem; top: 56px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: .75rem;
-    padding: .5rem;
-    display: none;
-    flex-direction: column;
+  .Introduction {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
   }
-  .nav-links.show { display: flex; }
-
-  .hero { grid-template-columns: 1fr; gap: 1.25rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
-
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    gap: 1.5rem;
+  }
 }
