@@ -1,7 +1,8 @@
 # assignment-1
-# Protfolio wep
+# Protfolio website
 This is my protfolio website built by using HTML,CSS, and JavaScript
----
+
+
 # Description
 - **Header / Navigation:** Logo on the left and links (About, Projects, Contact) on the right.  
 - **Introduction Section:** Displays my name and a dynamic greeting message based on the time of day.  
@@ -18,7 +19,6 @@ For this homework, I did the coding myself and used an AI assistant mainly for:
 
 - **Suggestions on CSS organization for improve the desgin**.
 
+- **Showing the way to write README file as in lab**.
 
-- **Showin the way to write README file as in lab**.
-
-I wrote the content (bio, projects, structure) and customized the design.
+- **develop and review the code**
